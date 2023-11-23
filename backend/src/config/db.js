@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
   host: process.env.HOST,
   port: process.env.PORT,
   dialect: 'mysql',
-  logging: false
+  // logging: false
 })
 
 export default sequelize

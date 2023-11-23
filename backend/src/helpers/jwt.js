@@ -23,8 +23,6 @@ export const createRefreshToken = (data) => {
   return { refreshToken };
 }
 
-
-
 export const verifyToken = async (req, res, next) => {
   const { authorization } = req.headers
   const token = authorization && authorization.split(' ')[1];
