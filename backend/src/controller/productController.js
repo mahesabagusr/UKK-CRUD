@@ -42,6 +42,13 @@ export const updateProduct = async (req, res) => {
   try {
     const { id } = req.params
     const { name, price, stock, colour } = req.body
+
+    if (name == '' || price == '' || stock == '' || colour == '') {
+      res.status(404).json({
+        msg: 'Harap isi Data dengan Lengkap'
+      })
+    }
+
     await Product.update({ name: name, price: price, stock: stock, colour: colour }, {
       where: {
         id: id
@@ -92,6 +99,4 @@ export const searchProduct = async (req, res) => {
   } catch (err) {
     console.log(err.message);
   }
-
-
 }
